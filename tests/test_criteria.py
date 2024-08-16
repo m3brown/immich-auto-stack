@@ -1,9 +1,10 @@
-from datetime import timedelta
-from faker import Faker
-from itertools import groupby
 import os
-import pytest
+from datetime import timedelta
+from itertools import groupby
 from unittest.mock import patch
+
+import pytest
+from faker import Faker
 
 from immich_auto_stack import apply_criteria
 
@@ -179,7 +180,7 @@ def test_groupby_custom_criteria_given_matching_filenames_return_one_group(file_
     # Arrange
     asset_list = [asset_factory(f) for f in file_list]
     # test_regex = r'([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\._-].*)?\.[\w]{3,4}$'
-    test_criteria_json = r'[{"key": "originalFileName", "regex": {"key": "([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\\._-].*)?\\.[\\w]{3,4}$"}},{"key": "localDateTime"}]'
+    test_criteria_json = r'[{"key": "originalFileName", "regex": {"key": "([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\\._-].*)?\\.[\\w]{3,4}$"}},{"key": "localDateTime"}]'  # noqa
 
     # Act
     with patch.dict(os.environ, {"CRITERIA": test_criteria_json}):
@@ -224,7 +225,7 @@ def test_groupby_custom_criteria_given_non_matching_filenames_return_multiple_gr
     # Arrange
     asset_list = [asset_factory(f) for f in file_list]
     # test_regex = r'([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\._-].*)?\.[\w]{3,4}$'
-    test_criteria_json = r'[{"key": "originalFileName", "regex": {"key": "([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\\._-].*)?\\.[\\w]{3,4}$"}},{"key": "localDateTime"}]'
+    test_criteria_json = r'[{"key": "originalFileName", "regex": {"key": "([A-Z]+[-_]?[0-9]{4}([-_][0-9]{4})?)([\\._-].*)?\\.[\\w]{3,4}$"}},{"key": "localDateTime"}]'  # noqa
 
     # Act
     with patch.dict(os.environ, {"CRITERIA": test_criteria_json}):

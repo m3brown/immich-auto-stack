@@ -84,6 +84,13 @@ Keywords can be provided to prioritize the file that is selected as the parent. 
 docker -e PARENT_PROMOTE="edit,crop,hdr" ...
 ``` 
 
+## Running tests
+
+```sh
+docker build -f Dockerfile.test -t immich-auto-stack-pytest .
+docker run immich-auto-stack-pytest
+```
+
 ## License
 
 This project is licensed under the GNU Affero General Public License version 3 (AGPLv3) to align with the licensing of Immich, which this script interacts with. For more details on the rights and obligations under this license, see the [GNU licenses page](https://opensource.org/license/agpl-v3).

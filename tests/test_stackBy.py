@@ -1,6 +1,7 @@
-from faker import Faker
-import pytest
 from unittest.mock import ANY
+
+import pytest
+from faker import Faker
 
 from immich_auto_stack import stackBy
 

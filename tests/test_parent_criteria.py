@@ -1,9 +1,8 @@
-from datetime import timedelta
-from faker import Faker
-from itertools import groupby
 import os
-import pytest
 from unittest.mock import patch
+
+import pytest
+from faker import Faker
 
 from immich_auto_stack import parent_criteria
 
@@ -60,7 +59,9 @@ def asset_factory(filename="IMG_1234.jpg"):
         ],
     ],
 )
-def test_parent_criteria_given_no_promote_override_sorts_alphabetically(input_order, expected_order):
+def test_parent_criteria_given_no_promote_override_sorts_alphabetically(
+    input_order, expected_order
+):
     # Arrange
     asset_list = [asset_factory(f) for f in input_order]
     expected_order = [asset_factory(f) for f in expected_order]
@@ -129,7 +130,9 @@ def test_parent_criteria_given_no_promote_override_sorts_alphabetically(input_or
         ],
     ],
 )
-def test_parent_criteria_given_no_promote_override_prioritizes_jpg_jpeg_png(input_order, expected_order):
+def test_parent_criteria_given_no_promote_override_prioritizes_jpg_jpeg_png(
+    input_order, expected_order
+):
     # Arrange
     asset_list = [asset_factory(f) for f in input_order]
     expected_order = [asset_factory(f) for f in expected_order]
@@ -214,7 +217,9 @@ def test_parent_criteria_given_no_promote_override_prioritizes_jpg_jpeg_png(inpu
         ],
     ],
 )
-def test_parent_criteria_given_promote_override_prioritizes_promote_matches(input_order, promote_str, expected_order):
+def test_parent_criteria_given_promote_override_prioritizes_promote_matches(
+    input_order, promote_str, expected_order
+):
     # Arrange
     asset_list = [asset_factory(f) for f in input_order]
     expected_order = [asset_factory(f) for f in expected_order]

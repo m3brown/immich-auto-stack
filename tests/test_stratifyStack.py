@@ -1,6 +1,5 @@
-from faker import Faker
+
 import pytest
-from unittest.mock import ANY
 
 from immich_auto_stack import stratifyStack
 

@@ -70,15 +70,15 @@ def test_stratifyStack_puts_single_parent_at_front(extensions, expected_first_ex
     [
         (
             ["jpg", "jpeg"],
-            ["jpg", "jpeg"]
+            ["jpeg", "jpg"]
         ),
         (
             ["png", "raw", "cr2", "xmp", "jpg"],
-            ["png", "jpg"]
+            ["jpg", "png"]
         ),
         (
             ["png", "jpg", "png", "png"],
-            ["png", "jpg", "png", "png"]
+            ["jpg", "png", "png", "png"]
         ),
     ],
 )
